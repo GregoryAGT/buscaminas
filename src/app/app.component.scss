@@ -1,0 +1,35 @@
+body {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+
+  }
+
+h1 {
+  display: block;
+  text-align: center;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgb(44, 44, 45);
+  background-color: rgb(128, 128, 130);
+  border-radius: 4px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 50px;
+  user-select: none;
+  color: rgb(0, 0, 0);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20pt;
+  margin: 0,5px;
+}
+
+.enabled:hover {
+  border: 1px solid rgb(99, 98, 104);
+  background-color: rgb(172, 169, 182);
+}
+
+.cell.opened {
+  background-color: rgba(99, 98, 101, 0.5);
+}
+

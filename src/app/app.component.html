@@ -1,0 +1,24 @@
+<div>
+<h1 *ngIf="!lost && !checkWin()">Buscaminas</h1>
+<h1 *ngIf="lost">Perdiste!</h1>
+<h1 *ngIf="checkWin()">Gataste!</h1>
+</div>
+<div *ngFor="let row of cells" style="display: flex; justify-content: center;">
+  <div
+    *ngFor="let cell of row"
+    class="cell"
+    [ngClass]="{
+      'opened': cell.isOpened,
+      'enabled': !cell.isOpened ,
+      'mine': cell.hasMine}"
+    (click)="openMine(cell)"
+    (contextmenu)="setFlag(cell)">
+    {{ cell.print() }}
+    <i *ngIf="cell.isOpened && cell.hasMine" class="fa-solid fa-bomb"></i>
+    <i *ngIf="!cell.isOpened && cell.hasFlag" class="fa-regular fa-flag-pennant"></i>
+   </div>
+</div>
+<br>
+<div style="text-align: center;">
+  <button class="btn btn-success" (click)="newGame()">Nuevo juego</button>&nbsp; <br> Marcas: {{ bombsLeft }}
+</div>
